@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'models/meal.dart';
+
 class CategoryMealsScreen extends StatelessWidget {
   // final String categoryId;
   // final String categoryTitle;
@@ -17,9 +19,7 @@ class CategoryMealsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(categoryTitle),),
-      body: Center(
-        child: Text("The Recipes For The Category!"),
-      ),
+      body: ListView.builder(itemBuilder:(ctx,index){return;},itemCount: Meal(),),
     );
   }
 }
