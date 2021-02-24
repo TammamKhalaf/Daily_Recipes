@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:DailyRecipes/category_meals_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'categories_screen.dart';
@@ -22,6 +23,9 @@ class MyApp extends StatelessWidget {
                 title: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed',fontWeight: FontWeight.bold),
               )),
       home: CategoriesScreen(),
+      routes: {
+        '/category-meals': (ctx) => CategoryMealsScreen() ,
+      },
     );
   }
 }
