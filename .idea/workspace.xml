@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db2b8154-c940-468f-8f97-6b5eadeb1acd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/widgets/meal_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DailyRecipes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DailyRecipes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/category_meals_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/category_meals_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/categories_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/categories_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/category_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/category_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/category_meals_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/category_meals_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +58,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TAMMAM\DailyRecipes\lib\widgets" />
+      <recent name="C:\Users\TAMMAM\DailyRecipes\lib\screens" />
       <recent name="C:\Users\TAMMAM\DailyRecipes\lib" />
     </key>
   </component>
@@ -96,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614197221266</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="selecting meals for a chosen category">
+      <created>1614199501544</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614199501544</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +126,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -116,6 +134,7 @@
     <MESSAGE value="Using Named Routes &amp; Passing Data With Named Routes" />
     <MESSAGE value="Using Named Routes &amp; Passing Data With Named Routes and Constants" />
     <MESSAGE value="adding a meal model &amp; data" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding a meal model &amp; data" />
+    <MESSAGE value="selecting meals for a chosen category" />
+    <option name="LAST_COMMIT_MESSAGE" value="selecting meals for a chosen category" />
   </component>
 </project>
