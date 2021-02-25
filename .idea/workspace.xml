@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db2b8154-c940-468f-8f97-6b5eadeb1acd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/widgets/main_drawer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/tabs_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/tabs_screen.dart" afterDir="false" />
     </list>
@@ -151,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614271390296</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="adding a bottom tabBar">
+      <created>1614275023975</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614275023975</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +186,7 @@
     <MESSAGE value="onGenerateRoute || onUnknownRoute" />
     <MESSAGE value="finishing the meal detail page" />
     <MESSAGE value="adding a tabBar to the appBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding a tabBar to the appBar" />
+    <MESSAGE value="adding a bottom tabBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding a bottom tabBar" />
   </component>
 </project>

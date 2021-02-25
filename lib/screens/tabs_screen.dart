@@ -1,5 +1,6 @@
 import 'package:DailyRecipes/screens/categories_screen.dart';
 import 'package:DailyRecipes/screens/favorites_screen.dart';
+import 'package:DailyRecipes/widgets/main_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ class _TapsScreenState extends State<TapsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
       ),
