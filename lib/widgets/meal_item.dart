@@ -1,4 +1,5 @@
 import 'package:DailyRecipes/models/meal.dart';
+import 'package:DailyRecipes/screens/meal_detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,7 @@ class MealItem extends StatelessWidget {
   final String title;
   final String imageUrl;
   final int duration;
+  final String id;
 
   // ignore: non_constant_identifier_names, missing_return
   String get ComplexityText {
@@ -46,18 +48,24 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   MealItem(
-      {@required this.title,
+      {@required this.id,
+      @required this.title,
       @required this.imageUrl,
       @required this.duration,
       @required this.complexity,
       @required this.affordability});
 
-  void selectMeal() {}
+  void selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      MealDetailScreen.routeName,
+      arguments: id,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
