@@ -22,14 +22,31 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light().textTheme.copyWith(
                 body1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
                 body2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-                title: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed',fontWeight: FontWeight.bold),
+                title: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'RobotoCondensed',
+                    fontWeight: FontWeight.bold),
               )),
       //home: CategoriesScreen(),
-      initialRoute: '/', //default is '/'
+      initialRoute: '/',
+      //default is '/'
       routes: {
         '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeCategoryMeals: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        if (settings.name == '/some route') {
+          // todo -> do some thing
+        }
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      },
+      // ignore: missing_return
+      onUnknownRoute: (settings) {
+        //todo| {this step for dynamic app if some route
+        //todo| not registered you can foreword him to another place} 404
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
   }
