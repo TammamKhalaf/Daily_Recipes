@@ -1,7 +1,6 @@
-
-import 'file:///C:/Users/TAMMAM/DailyRecipes/lib/screens/category_meals_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -12,14 +11,18 @@ class CategoryItem extends StatelessWidget {
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-        CategoryMealsScreen.routeCategoryMeals, arguments: {'id':id,'title':title}
+      CategoryMealsScreen.routeName,
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:() => selectCategory(context),
+      onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(

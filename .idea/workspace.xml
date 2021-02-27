@@ -8,9 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db2b8154-c940-468f-8f97-6b5eadeb1acd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/Use Case.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/category_meals_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/category_meals_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/filters_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/filters_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/main_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/main_drawer.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614423556520</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="adding filter switches">
+      <created>1614429205795</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614429205795</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +235,7 @@
     <MESSAGE value="Adding links to the drawer" />
     <MESSAGE value="Replacing Pages instead of pushing" />
     <MESSAGE value="Popping Pages &amp; Passing Data Back" />
-    <option name="LAST_COMMIT_MESSAGE" value="Popping Pages &amp; Passing Data Back" />
+    <MESSAGE value="adding filter switches" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding filter switches" />
   </component>
 </project>

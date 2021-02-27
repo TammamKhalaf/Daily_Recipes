@@ -1,19 +1,25 @@
-import 'package:DailyRecipes/models/meal.dart';
-import 'package:DailyRecipes/screens/meal_detail_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/meal_detail_screen.dart';
+import '../models/meal.dart';
+
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
-  final String id;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
 
-  // ignore: non_constant_identifier_names
-  String get ComplexityText {
+  MealItem(
+      {@required this.id,
+      @required this.title,
+      @required this.imageUrl,
+      @required this.affordability,
+      @required this.complexity,
+      @required this.duration,});
+
+  String get complexityText {
     switch (complexity) {
       case Complexity.Simple:
         return 'Simple';
@@ -25,12 +31,11 @@ class MealItem extends StatelessWidget {
         return 'Hard';
         break;
       default:
-        return 'unknown';
+        return 'Unknown';
     }
   }
 
-  // ignore: non_constant_identifier_names
-  String get AffordabilityText {
+  String get affordabilityText {
     switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
@@ -42,31 +47,21 @@ class MealItem extends StatelessWidget {
         return 'Expensive';
         break;
       default:
-        return 'unknown';
+        return 'Unknown';
     }
   }
-
-
-  MealItem(
-      {@required this.id,
-      @required this.title,
-      @required this.imageUrl,
-      @required this.duration,
-      @required this.complexity,
-      @required this.affordability,
-      @required this.removeItem});
 
   void selectMeal(BuildContext context) {
     Navigator.of(context)
         .pushNamed(
-          MealDetailScreen.routeName,
-          arguments: id,
-        )
-        .then((result) => () {
-              if (result != null) {
-                removeItem(result);
-              }
-            });
+      MealDetailScreen.routeName,
+      arguments: id,
+    )
+        .then((result) {
+      if (result != null) {
+        // removeItem(result);
+      }
+    });
   }
 
   @override
@@ -80,9 +75,9 @@ class MealItem extends StatelessWidget {
         elevation: 4,
         margin: EdgeInsets.all(10),
         child: Column(
-          children: [
+          children: <Widget>[
             Stack(
-              children: [
+              children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
@@ -116,44 +111,50 @@ class MealItem extends StatelessWidget {
                     ),
                   ),
                 )
-              ], //<Widget>[]
+              ],
             ),
             Padding(
               padding: EdgeInsets.all(20),
-              child: Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Row(children: [
-                      Icon(Icons.schedule),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.schedule,
+                      ),
                       SizedBox(
                         width: 6,
                       ),
                       Text('$duration min'),
-                    ]),
-                    Row(
-                      children: [
-                        Icon(Icons.work),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(ComplexityText),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.attach_money),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(AffordabilityText),
-                      ],
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.work,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(complexityText),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.attach_money,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(affordabilityText),
+                    ],
+                  ),
+                ],
               ),
-            )
-          ], //<widget>[]
+            ),
+          ],
         ),
       ),
     );
