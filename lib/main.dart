@@ -70,11 +70,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeliMeals',
+      debugShowCheckedModeBanner: false,
+      title: 'Daily Recipes',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.orange,
         accentColor: Colors.amber,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        canvasColor: Color.fromRGBO(255, 254, 229, 1.0),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
             body1: TextStyle(
@@ -98,15 +99,9 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
-      onGenerateRoute: (settings) {
-        print(settings.arguments);
-        // if (settings.name == '/meal-detail') {
-        //   return ...;
-        // } else if (settings.name == '/something-else') {
-        //   return ...;
-        // }
-        // return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
-      },
+      // onGenerateRoute: (settings) {
+      //
+      // },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
           builder: (ctx) => CategoriesScreen(),
