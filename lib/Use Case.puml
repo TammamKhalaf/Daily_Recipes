@@ -1,0 +1,168 @@
+@startuml
+set namespaceSeparator ::
+
+class "DailyRecipes::main.dart::MyApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::main.dart::MyApp"
+
+class "DailyRecipes::main.dart::MyHomePage" {
+  +_MyHomePageState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "DailyRecipes::main.dart::MyHomePage"
+
+class "DailyRecipes::main.dart::_MyHomePageState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "DailyRecipes::main.dart::_MyHomePageState"
+
+class "DailyRecipes::models::Category.dart::Category" {
+  +dynamic id
+  +dynamic title
+  +Color color
+}
+
+"DailyRecipes::models::Category.dart::Category" o-- "dart::ui::Color"
+
+class "DailyRecipes::models::meal.dart::Complexity" {
+  +int index
+  {static} +List<Complexity> values
+  {static} +Complexity Simple
+  {static} +Complexity Challenging
+  {static} +Complexity Hard
+}
+
+"DailyRecipes::models::meal.dart::Complexity" o-- "DailyRecipes::models::meal.dart::Complexity"
+
+class "DailyRecipes::models::meal.dart::Affordability" {
+  +int index
+  {static} +List<Affordability> values
+  {static} +Affordability Affordable
+  {static} +Affordability Pricey
+  {static} +Affordability Luxurious
+}
+
+"DailyRecipes::models::meal.dart::Affordability" o-- "DailyRecipes::models::meal.dart::Affordability"
+
+class "DailyRecipes::models::meal.dart::Meal" {
+  +dynamic id
+  +List categories
+  +dynamic title
+  +dynamic imageUrl
+  +List ingredients
+  +List steps
+  +int duration
+  +Complexity complexity
+  +Affordability affordability
+  +bool isGlutenFree
+  +bool isLactoseFree
+  +bool isVegan
+  +bool isVegetarian
+}
+
+"DailyRecipes::models::meal.dart::Meal" o-- "DailyRecipes::models::meal.dart::Complexity"
+"DailyRecipes::models::meal.dart::Meal" o-- "DailyRecipes::models::meal.dart::Affordability"
+
+class "DailyRecipes::screens::categories_screen.dart::CategoriesScreen" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::screens::categories_screen.dart::CategoriesScreen"
+
+class "DailyRecipes::screens::category_meals_screen.dart::CategoryMealsScreen" {
+  {static} +dynamic routeCategoryMeals
+  +_CategoryMealsScreenState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "DailyRecipes::screens::category_meals_screen.dart::CategoryMealsScreen"
+
+class "DailyRecipes::screens::category_meals_screen.dart::_CategoryMealsScreenState" {
+  +dynamic categoryTitle
+  +List<Meal> displayedMeals
+  -bool _loadedInitData
+  +void initState()
+  -void _removeMeal()
+  +void didChangeDependencies()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "DailyRecipes::screens::category_meals_screen.dart::_CategoryMealsScreenState"
+
+class "DailyRecipes::screens::favorites_screen.dart::FavoritesScreen" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::screens::favorites_screen.dart::FavoritesScreen"
+
+class "DailyRecipes::screens::filters_screen.dart::FiltersScreen" {
+  {static} +String routeName
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::screens::filters_screen.dart::FiltersScreen"
+
+class "DailyRecipes::screens::meal_detail_screen.dart::MealDetailScreen" {
+  {static} +dynamic routeName
+  +Widget buildSectionTitle()
+  +Widget buildContainer()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::screens::meal_detail_screen.dart::MealDetailScreen"
+
+class "DailyRecipes::screens::tabs_screen.dart::TapsScreen" {
+  +_TapsScreenState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "DailyRecipes::screens::tabs_screen.dart::TapsScreen"
+
+class "DailyRecipes::screens::tabs_screen.dart::_TapsScreenState" {
+  -List<Map<dynamic, Object>> _pages
+  -int _selectedPageIndex
+  -void _selectPage()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "DailyRecipes::screens::tabs_screen.dart::_TapsScreenState"
+
+class "DailyRecipes::widgets::category_item.dart::CategoryItem" {
+  +dynamic id
+  +dynamic title
+  +Color color
+  +void selectCategory()
+  +Widget build()
+}
+
+"DailyRecipes::widgets::category_item.dart::CategoryItem" o-- "dart::ui::Color"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::widgets::category_item.dart::CategoryItem"
+
+class "DailyRecipes::widgets::main_drawer.dart::MainDrawer" {
+  +Widget buildListTile()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::widgets::main_drawer.dart::MainDrawer"
+
+class "DailyRecipes::widgets::meal_item.dart::MealItem" {
+  +dynamic title
+  +dynamic imageUrl
+  +int duration
+  +dynamic id
+  +Complexity complexity
+  +Affordability affordability
+  +Function removeItem
+  +dynamic ComplexityText
+  +dynamic AffordabilityText
+  +void selectMeal()
+  +Widget build()
+}
+
+"DailyRecipes::widgets::meal_item.dart::MealItem" o-- "DailyRecipes::models::meal.dart::Complexity"
+"DailyRecipes::widgets::meal_item.dart::MealItem" o-- "DailyRecipes::models::meal.dart::Affordability"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "DailyRecipes::widgets::meal_item.dart::MealItem"
+
+
+@enduml
