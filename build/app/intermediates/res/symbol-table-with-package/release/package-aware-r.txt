@@ -1,4 +1,4 @@
-com.example.DailyRecipes
+com.tammamkhalaf.DailyRecipes
 attr alpha
 attr font
 attr fontProviderAuthority
